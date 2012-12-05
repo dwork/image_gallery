@@ -11,6 +11,299 @@ function image_gallery_views_default_views() {
   $export = array();
 
   $view = new view;
+  $view->name = 'album_slideshow';
+  $view->description = 'Optional slideshow for an Album';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Album Slideshow';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Album Slideshow';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'slideshow';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  /* Field: Content: Photo */
+  $handler->display->display_options['fields']['field_photo']['id'] = 'field_photo';
+  $handler->display->display_options['fields']['field_photo']['table'] = 'field_data_field_photo';
+  $handler->display->display_options['fields']['field_photo']['field'] = 'field_photo';
+  $handler->display->display_options['fields']['field_photo']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_photo']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_photo']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_photo']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_photo']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_photo']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_photo']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_photo']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_photo']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_photo']['field_api_classes'] = 0;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Album reference (field_album_reference) */
+  $handler->display->display_options['arguments']['field_album_reference_nid']['id'] = 'field_album_reference_nid';
+  $handler->display->display_options['arguments']['field_album_reference_nid']['table'] = 'field_data_field_album_reference';
+  $handler->display->display_options['arguments']['field_album_reference_nid']['field'] = 'field_album_reference_nid';
+  $handler->display->display_options['arguments']['field_album_reference_nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_album_reference_nid']['default_argument_skip_url'] = 0;
+  $handler->display->display_options['arguments']['field_album_reference_nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_album_reference_nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_album_reference_nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_album_reference_nid']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['field_album_reference_nid']['not'] = 0;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'photo' => 'photo',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'album-slideshow';
+  $export['album_slideshow'] = $view;
+
+  $view = new view;
+  $view->name = 'albums';
+  $view->description = 'Albums, newest first';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Albums';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Albums';
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'table';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  /* Field: Content: Album Cover */
+  $handler->display->display_options['fields']['field_album_cover_full']['id'] = 'field_album_cover_full';
+  $handler->display->display_options['fields']['field_album_cover_full']['table'] = 'field_data_field_album_cover_full';
+  $handler->display->display_options['fields']['field_album_cover_full']['field'] = 'field_album_cover_full';
+  $handler->display->display_options['fields']['field_album_cover_full']['label'] = '';
+  $handler->display->display_options['fields']['field_album_cover_full']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_album_cover_full']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_album_cover_full']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_album_cover_full']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_album_cover_full']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_album_cover_full']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_album_cover_full']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_album_cover_full']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_album_cover_full']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_album_cover_full']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_album_cover_full']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_album_cover_full']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_album_cover_full']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_album_cover_full']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_album_cover_full']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_album_cover_full']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_album_cover_full']['hide_empty'] = 1;
+  $handler->display->display_options['fields']['field_album_cover_full']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_album_cover_full']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_album_cover_full']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_album_cover_full']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_album_cover_full']['field_api_classes'] = 0;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['body']['alter']['text'] = '[body] ... Click here: ';
+  $handler->display->display_options['fields']['body']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['body']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['body']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['body']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['body']['hide_empty'] = 1;
+  $handler->display->display_options['fields']['body']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['body']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['body']['field_api_classes'] = 0;
+  /* Field: Content: Album */
+  $handler->display->display_options['fields']['field_album']['id'] = 'field_album';
+  $handler->display->display_options['fields']['field_album']['table'] = 'field_data_field_album';
+  $handler->display->display_options['fields']['field_album']['field'] = 'field_album';
+  $handler->display->display_options['fields']['field_album']['label'] = '';
+  $handler->display->display_options['fields']['field_album']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_album']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_album']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_album']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_album']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_album']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_album']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_album']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_album']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_album']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_album']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['field_album']['field_api_classes'] = 0;
+  /* Field: Cover + album description + link */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Cover + album description + link';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Album description';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<table><tr><td>[field_album_cover_full]</td><td>[body] [field_album]</tr></table>';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['nothing']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['nothing']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['nothing']['hide_empty'] = 1;
+  $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 1;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'album' => 'album',
+  );
+  /* Filter criterion: Content: Category (field_category) */
+  $handler->display->display_options['filters']['field_category_tid']['id'] = 'field_category_tid';
+  $handler->display->display_options['filters']['field_category_tid']['table'] = 'field_data_field_category';
+  $handler->display->display_options['filters']['field_category_tid']['field'] = 'field_category_tid';
+  $handler->display->display_options['filters']['field_category_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_category_tid']['expose']['operator_id'] = 'field_category_tid_op';
+  $handler->display->display_options['filters']['field_category_tid']['expose']['label'] = 'Album Category';
+  $handler->display->display_options['filters']['field_category_tid']['expose']['operator'] = 'field_category_tid_op';
+  $handler->display->display_options['filters']['field_category_tid']['expose']['identifier'] = 'field_category_tid';
+  $handler->display->display_options['filters']['field_category_tid']['expose']['remember'] = 1;
+  $handler->display->display_options['filters']['field_category_tid']['expose']['multiple'] = 1;
+  $handler->display->display_options['filters']['field_category_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_category_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_category_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_category_tid']['vocabulary'] = 'album_categories';
+  $handler->display->display_options['filters']['field_category_tid']['hierarchy'] = 1;
+  $handler->display->display_options['filters']['field_category_tid']['error_message'] = 1;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'albums';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Albums';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $export['albums'] = $view;
+
+  $view = new view;
   $view->name = 'image_gallery';
   $view->description = '';
   $view->tag = 'default';
