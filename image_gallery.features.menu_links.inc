@@ -18,11 +18,11 @@ function image_gallery_menu_default_menu_links() {
     'link_title' => 'Albums',
     'options' => array(),
     'module' => 'system',
-    'hidden' => '0',
+    'hidden' => '1',
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-44',
+    'weight' => '-49',
   );
   // Translatables
   // Included for use with string extractors like potx.

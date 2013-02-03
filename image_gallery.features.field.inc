@@ -20,6 +20,9 @@ function image_gallery_field_default_fields() {
         0 => 'node',
       ),
       'field_name' => 'body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -53,6 +56,12 @@ function image_gallery_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '0',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -123,6 +132,12 @@ function image_gallery_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '4',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -206,6 +221,12 @@ function image_gallery_field_default_fields() {
           'type' => 'hidden',
           'weight' => '3',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -270,7 +291,6 @@ function image_gallery_field_default_fields() {
           ),
           'sort' => array(
             'direction' => 'ASC',
-            'field' => 'field_date:value',
             'property' => 'title',
             'type' => 'property',
           ),
@@ -299,6 +319,12 @@ function image_gallery_field_default_fields() {
           ),
           'type' => 'entityreference_label',
           'weight' => 5,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -389,6 +415,12 @@ function image_gallery_field_default_fields() {
           'type' => 'entityreference_label',
           'weight' => '2',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -423,6 +455,9 @@ function image_gallery_field_default_fields() {
         0 => 'node',
       ),
       'field_name' => 'body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -456,6 +491,12 @@ function image_gallery_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '0',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -535,6 +576,12 @@ function image_gallery_field_default_fields() {
           'settings' => array(),
           'type' => 'node_reference_default',
           'weight' => '2',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -617,6 +664,12 @@ function image_gallery_field_default_fields() {
           'type' => 'image',
           'weight' => '1',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -662,6 +715,9 @@ function image_gallery_field_default_fields() {
         0 => 'node',
       ),
       'field_name' => 'body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -694,6 +750,12 @@ function image_gallery_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '0',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -771,6 +833,12 @@ function image_gallery_field_default_fields() {
           ),
           'type' => 'image',
           'weight' => '1',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -851,6 +919,12 @@ function image_gallery_field_default_fields() {
           ),
           'type' => 'image',
           'weight' => '0',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'taxonomy_term',
