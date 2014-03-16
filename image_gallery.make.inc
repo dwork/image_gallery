@@ -22,8 +22,8 @@ projects[entityreference][subdir] = "contrib"
 projects[entityconnect][version] = "1.0-rc1"
 projects[entityconnect][subdir] = "contrib"
 
-; projects[eva][version] = "1.1"
-; projects[eva][subdir] = "contrib"
+projects[eva][version] = "1.2"
+projects[eva][subdir] = "contrib"
 
 projects[hierarchical_select][version] = "3.0-alpha6"
 projects[hierarchical_select][subdir] = "contrib"

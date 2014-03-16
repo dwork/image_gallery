@@ -22,8 +22,8 @@ projects[entityreference][subdir] = "contrib"
 projects[entityconnect][version] = "1.0-rc1"
 projects[entityconnect][subdir] = "contrib"
 
-; projects[eva][version] = "1.1"
-; projects[eva][subdir] = "contrib"
+projects[eva][version] = "1.2"
+projects[eva][subdir] = "contrib"
 
 projects[hierarchical_select][version] = "3.0-alpha6"
 projects[hierarchical_select][subdir] = "contrib"
@@ -38,7 +38,6 @@ projects[rotary_projects_membership][download][type] = "git"
 projects[rotary_projects_membership][download][url] = "https://github.com/dwork/image_gallery.git"
 projects[rotary_projects_membership][subdir] = "contrib"
 projects[rotary_projects_membership][type] = "module"
-projects[rotary_projects_membership][version] = "1.0-beta1"
 
 projects[views_fluid_grid][version] = "3.0"
 projects[views_fluid_grid][subdir] = "contrib"
