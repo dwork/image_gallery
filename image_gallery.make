@@ -4,7 +4,9 @@ core = 7.x
 # Override
 projects[features][version] = "2.0"
 projects[views][version] = "3.7"
+projects[views][subdir] = "contrib"
 projects[ctools][version] = "1.4"
+projects[views][subdir] = "contrib"
 
 ;--------------------
 ; Additional Contrib
